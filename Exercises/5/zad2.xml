@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+   <xsl:template match="/">
+      <html>
+         <body>
+            <table>
+               <tr>
+                  <td>
+                     <xsl:for-each select="//track">
+                        <xsl:choose>
+                           <xsl:when test="string-length(.) > 15">
+                              <li>A big string:<xsl:value-of select="text()"/> </li>
+                           </xsl:when>
+                           <xsl:when test="string-length(.) &lt; 15">
+                              <li>A small string:<xsl:value-of select="text()"/></li>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <li>A medium string:<xsl:value-of select="text()"/></li>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:for-each>
+                  </td>
+               </tr>
+            </table>             
+         </body>
+      </html>
+   </xsl:template>
+</xsl:stylesheet>

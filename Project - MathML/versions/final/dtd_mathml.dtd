@@ -1,0 +1,210 @@
+<!ENTITY % att-globalatts      'class CDATA #IMPLIED
+                                 style CDATA #IMPLIED
+                                 id    ID    #IMPLIED
+                                 other CDATA #IMPLIED'  >
+
+<!ENTITY % att-fontsize        'fontsize CDATA #IMPLIED'             >
+<!ENTITY % att-fontweight      'fontweight (normal | bold) #IMPLIED'  >
+<!ENTITY % att-fontstyle       'fontstyle (normal | italic) #IMPLIED' >
+<!ENTITY % att-fontfamily      'fontfamily CDATA   #IMPLIED'         >
+<!ENTITY % att-color           'color CDATA   #IMPLIED'              >
+
+<!ENTITY % att-fontinfo      '%att-fontsize;
+                             %att-fontweight;
+                             %att-fontstyle;
+                             %att-fontfamily;
+                             %att-color;'  >
+
+<!ENTITY % att-form        'form (prefix | infix | postfix) #IMPLIED' >
+<!ENTITY % att-fence       'fence (true | false ) #IMPLIED'    >
+<!ENTITY % att-separator   'separator (true | false ) #IMPLIED'    >
+<!ENTITY % att-lspace      'lspace CDATA  #IMPLIED'       >
+<!ENTITY % att-rspace      'rspace CDATA  #IMPLIED'       >
+<!ENTITY % att-stretchy    'stretchy (true | false ) #IMPLIED'     >
+<!ENTITY % att-symmetric   'symmetric (true | false ) #IMPLIED'    >
+<!ENTITY % att-maxsize     'maxsize CDATA #IMPLIED'       >
+<!ENTITY % att-minsize     'minsize CDATA #IMPLIED'       >
+<!ENTITY % att-largeop           'largeop (true | false ) #IMPLIED' >
+<!ENTITY % att-movablelimits     'movablelimits (true | false ) #IMPLIED' >
+<!ENTITY % att-accent               'accent (true | false)  #IMPLIED'>
+
+<!ENTITY % att-opinfo '%att-form;
+                        %att-fence;
+                        %att-separator;
+                        %att-lspace;
+                        %att-rspace;
+                        %att-stretchy;
+                        %att-symmetric;
+                        %att-maxsize;
+                        %att-minsize;
+                        %att-largeop;
+                        %att-movablelimits;
+                        %att-accent;'         >
+
+
+<!ENTITY % att-linethickness        'linethickness CDATA #IMPLIED' >
+
+<!ENTITY % att-open                 'open CDATA #IMPLIED' >
+<!ENTITY % att-close                'close CDATA #IMPLIED' >
+<!ENTITY % att-separators           'separators CDATA #IMPLIED' >
+
+<!ENTITY % att-subscriptshift       'subscriptshift CDATA #IMPLIED'>
+<!ENTITY % att-superscriptshift     'superscriptshift CDATA #IMPLIED'    >
+<!ENTITY % att-accentunder          'accentunder (true | false) #IMPLIED'>
+
+<!ENTITY % att-align                'align CDATA #IMPLIED'           >
+<!ENTITY % att-rowalign             'rowalign CDATA #IMPLIED'    >
+<!ENTITY % att-columnalign          'columnalign CDATA #IMPLIED'   >
+<!ENTITY % att-groupalign           'groupalign CDATA #IMPLIED'    >
+<!ENTITY % att-alignmentscope       'alignmentscope CDATA #IMPLIED'  >
+
+<!ENTITY % att-rowspacing           'rowspacing CDATA #IMPLIED'      >
+<!ENTITY % att-columnspacing        'columnspacing CDATA #IMPLIED'   >
+<!ENTITY % att-rowlines             'rowlines CDATA #IMPLIED'           >
+<!ENTITY % att-columnlines          'columnlines CDATA #IMPLIED'         >
+<!ENTITY % att-frame                'frame (none | solid | dashed)
+#IMPLIED'  >
+<!ENTITY % att-framespacing         'framespacing CDATA #IMPLIED'       >
+<!ENTITY % att-equalrows            'equalrows CDATA #IMPLIED'         >
+<!ENTITY % att-equalcolumns         'equalcolumns CDATA #IMPLIED'     >
+<!ENTITY % att-displaystyle         'displaystyle (true | false) #IMPLIED'>
+
+<!ENTITY % att-tableinfo           '%att-align;
+                                   %att-rowalign;
+                                   %att-columnalign;
+                                   %att-groupalign;
+                                   %att-alignmentscope;
+                                   %att-rowspacing;
+                                   %att-columnspacing;
+                                   %att-rowlines;
+                                   %att-columnlines;
+                                   %att-frame;
+                                   %att-framespacing;
+                                   %att-equalrows;
+                                   %att-equalcolumns;
+                                   %att-displaystyle;'        >
+
+<!ENTITY % att-rowspan              'rowspan CDATA #IMPLIED'         >
+<!ENTITY % att-columnspan           'columnspan CDATA #IMPLIED'      >
+
+<!ENTITY % att-width             'width CDATA #IMPLIED'   >
+<!ENTITY % att-height            'height CDATA #IMPLIED' >
+
+
+<!ENTITY % ptoken "mi | mn | mo" >
+
+<!ATTLIST mi        %att-fontinfo;
+                    %att-globalatts;    >
+
+<!ATTLIST mn        %att-fontinfo;
+                    %att-globalatts;    >
+
+<!ATTLIST mo        %att-fontinfo;
+                    %att-opinfo;
+                    %att-globalatts;     >
+
+
+<!ENTITY % pgenschema "mrow|mfrac|msqrt|mroot|mfenced" >
+
+<!ATTLIST mrow      %att-globalatts;   >
+
+<!ATTLIST mfrac     %att-linethickness;
+                    %att-globalatts; >
+
+<!ATTLIST msqrt     %att-globalatts;   >
+
+<!ATTLIST mroot     %att-globalatts;   >
+
+<!ATTLIST mfenced   %att-open;
+                    %att-close;
+                    %att-separators;
+                    %att-globalatts;     >
+
+
+<!ENTITY % pscrschema  "msub|msup|munderover" >
+
+<!ATTLIST msub      %att-subscriptshift;
+                    %att-globalatts;     >
+
+<!ATTLIST msup      %att-superscriptshift;
+                    %att-globalatts;          >
+
+<!ATTLIST munderover %att-accent;
+                     %att-accentunder;
+                     %att-globalatts;      >
+
+<!ENTITY % ptabschema "mtable|mtr|mtd" >
+
+<!ATTLIST mtable    %att-tableinfo;
+                    %att-globalatts;      >
+
+<!ATTLIST mtr       %att-rowalign;
+                    %att-columnalign;
+                    %att-groupalign;
+                    %att-globalatts; >
+
+<!ATTLIST mtd       %att-rowalign;
+                    %att-columnalign;
+                    %att-groupalign;
+                    %att-rowspan;
+                    %att-columnspan;
+                    %att-globalatts;   >
+					
+<!ENTITY % TokenExpression "mspace;">
+					
+<!ATTLIST mspace
+  linebreak (newline|indentingnewline) #IMPLIED>
+
+<!ENTITY % Presentation  "%ptoken; | %pgenschema; | %pscrschema; |  %ptabschema;">
+
+<!ENTITY % PresExpression      "(%Presentation;)* "     >
+<!ENTITY % MathExpression      "(%Presentation;)* "     >
+
+<!ELEMENT mrow            (%PresExpression;)                      >
+<!ELEMENT mfrac           (%PresExpression;)                      >
+<!ELEMENT msqrt           (%PresExpression;)                      >
+<!ELEMENT msub            (%PresExpression;)                      >
+<!ELEMENT msup            (%PresExpression;)                      >
+<!ELEMENT munderover      (%PresExpression;)                      >
+<!ELEMENT mtable          (%PresExpression;)                      >
+<!ELEMENT mtr             (%PresExpression;)                      >
+<!ELEMENT mtd             (%PresExpression;)                      >
+
+<!ELEMENT mi     (#PCDATA | EMPTY )*        >
+<!ELEMENT mn     (#PCDATA | EMPTY )*        >
+<!ELEMENT mo     (#PCDATA | EMPTY )*        >
+
+<!ENTITY  %     att-macros      'macros CDATA #IMPLIED' >
+<!ENTITY  %     att-mode        'mode   CDATA #IMPLIED' >
+
+<!ENTITY  %     att-topinfo    '%att-globalatts;
+                                %att-macros;
+                                %att-mode;'     >
+
+<!ENTITY  %     att-name        'name CDATA #IMPLIED' >
+<!ENTITY  %     att-baseline    'baseline CDATA #IMPLIED' >
+<!ENTITY  %     att-overflow    'overflow
+(scroll|elide|truncate|scale) "scroll"' >
+<!ENTITY  %     att-altimg      'altimg CDATA #IMPLIED' >
+<!ENTITY  %     att-alttext     'alttext CDATA #IMPLIED' >
+
+<!ENTITY  %     att-browif      '%att-name;
+                                %att-height;
+                                %att-width;
+                                %att-baseline;
+                                %att-overflow;
+                                %att-altimg;
+                                %att-alttext; '     >
+
+<!ATTLIST  math         %att-topinfo;
+                        %att-browif;   >
+<!ELEMENT mathml (types,math_expressions)>
+<!ELEMENT types (expression_type*)>
+<!ELEMENT expression_type EMPTY>
+<!ATTLIST expression_type 
+	    name CDATA #REQUIRED
+		id ID #REQUIRED>
+<!ELEMENT math_expressions (expression*)>
+<!ATTLIST expression 
+	   expression_id IDREF #REQUIRED>
+<!ELEMENT expression (%MathExpression;)>

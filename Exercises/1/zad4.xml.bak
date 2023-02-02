@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<logicalOperators>
+	<logicalOperator1>
+		<condition> Equal to <\condition>
+		<operator> = <\operator>
+		<formulaExample> =A1=B1 <\formulaExample>
+		<description> The formula returns TRUE if a value in cell A1 is equal to the values in cell B1; FALSE otherwise.
+		<\description>
+	<\logicalOperator1>
+	
+	<logicalOperator2>
+		<condition> Not equal to <\condition>
+		<operator> <![CDATA[<>]]> <\operator>
+		<formulaExample> <![CDATA[=A1<>B1]]> <\formulaExample>
+		<description> The formula returns TRUE if a value in cell A1 is not equal to the value in cell B1; FALSE otherwise.
+		<\description>
+	<\logicalOperator2>
+	
+	<logicalOperator3>
+		<condition> Greater than <\condition>
+		<operator> <![CDATA[>]]> <\operator>
+		<formulaExample> <![CDATA[=A1>B1]]> <\formulaExample>
+		<description> The formula returns TRUE if a value in cell A1 is greater than a value in cell B1; otherwise it returns FALSE.
+		<\description>
+	<\logicalOperator3>
+	
+	<logicalOperator4>
+		<condition> Less than <\condition>
+		<operator> <![CDATA[<]]> <\operator>
+		<formulaExample> <![CDATA[=A1<B1]]> <\formulaExample>
+		<description> The formula returns TRUE if a value in cell A1 is less than a value in cell B1; otherwise it returns FALSE.
+		<\description>
+	<\logicalOperator4>
+	
+	<logicalOperator5>
+		<condition> Greater than or equal to<\condition>
+		<operator> <![CDATA[>=]]> <\operator>
+		<formulaExample> <![CDATA[=A1>=B1]]> <\formulaExample>
+		<description> The formula returns TRUE if a value in cell A1 is greater than or equal to a value in cell B1; otherwise it returns FALSE.
+		<\description>
+	<\logicalOperator5>
+	
+	<logicalOperator6>
+		<condition> Less than or equal to<\condition>
+		<operator> <![CDATA[<=]]> <\operator>
+		<formulaExample> <![CDATA[=A1<=B1]]> <\formulaExample>
+		<description> The formula returns TRUE if a value in cell A1 is less than or equal to a value in cell B1; otherwise it returns FALSE.
+		<\description>
+	<\logicalOperator6>
+<\logicalOperators>

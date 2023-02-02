@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<rec:record>
+	<rec:name>Miller</rec:name>
+	<rec:title>Dr. </rec:title>
+	<rec:publications> 
+		<rec:book>
+			<b:title>A true story</b:title>
+			<b:description>A real cool publication</b:description>
+		</rec:book>	
+	</rec:publications>
+</rec:record>

@@ -1,0 +1,275 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3.org/1998/Math/MathML" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="math">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="mspace">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="linebreak" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mrow">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+              <xs:element name="msup">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="mi" minOccurs="0"/>
+                    <xs:element type="xs:byte" name="mn" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="mi"/>
+              <xs:element name="mo">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="mrow" minOccurs="0">
+                      <xs:complexType>
+                        <xs:choice maxOccurs="unbounded" minOccurs="0">
+                          <xs:element type="xs:string" name="mo"/>
+                          <xs:element name="mfrac">
+                            <xs:complexType mixed="true">
+                              <xs:sequence>
+                                <xs:element name="mrow" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="mi"/>
+                                      <xs:element name="mrow">
+                                        <xs:complexType>
+                                          <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                            <xs:element type="xs:string" name="mo"/>
+                                            <xs:element type="xs:string" name="mi"/>
+                                            <xs:element type="xs:string" name="mn"/>
+                                          </xs:choice>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element type="xs:byte" name="mn" minOccurs="0"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:choice>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:byte" name="mn" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="mroot">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="msup">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="mi"/>
+                          <xs:element type="xs:byte" name="mn"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:byte" name="mn"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="mrow">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="munderover">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="mo"/>
+                          <xs:element name="mrow">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="mi"/>
+                                <xs:element type="xs:string" name="mo"/>
+                                <xs:element type="xs:byte" name="mn"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="mi"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="mrow" minOccurs="0">
+                      <xs:complexType>
+                        <xs:choice maxOccurs="unbounded" minOccurs="0">
+                          <xs:element type="xs:string" name="mi"/>
+                          <xs:element type="xs:string" name="mo"/>
+                          <xs:element name="mrow">
+                            <xs:complexType mixed="true">
+                              <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                <xs:element name="msup">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="mi" maxOccurs="unbounded" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="mo">
+                                  <xs:complexType mixed="true">
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="mi" maxOccurs="unbounded" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:choice>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:choice>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="mfrac">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="mrow" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="mrow" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="mo"/>
+                                <xs:element type="xs:string" name="mi"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:byte" name="mn" minOccurs="0"/>
+                          <xs:element name="msup" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="mi"/>
+                                <xs:element name="mrow">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="mi" maxOccurs="unbounded" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="mo" minOccurs="0"/>
+                          <xs:element name="msqrt" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="mrow">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="msup">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:string" name="mi"/>
+                                            <xs:element type="xs:byte" name="mn"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element type="xs:byte" name="mo"/>
+                                      <xs:element name="mrow">
+                                        <xs:complexType>
+                                          <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                            <xs:element type="xs:byte" name="mn"/>
+                                            <xs:element type="xs:string" name="mo"/>
+                                            <xs:element type="xs:string" name="mi"/>
+                                          </xs:choice>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="mi" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="munderover">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="mo"/>
+                    <xs:element name="mrow" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="mi"/>
+                          <xs:element type="xs:string" name="mo"/>
+                          <xs:element type="xs:byte" name="mn"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:byte" name="mn" minOccurs="0"/>
+                    <xs:element type="xs:string" name="mi" maxOccurs="unbounded" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="mfenced">
+                <xs:complexType>
+                  <xs:choice maxOccurs="unbounded" minOccurs="0">
+                    <xs:element type="xs:byte" name="mn"/>
+                    <xs:element type="xs:string" name="mi"/>
+                    <xs:element type="xs:byte" name="mo"/>
+                    <xs:element name="mfenced">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="mi"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="separators" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="mtable">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="mtr" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="mtd" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType mixed="true">
+                                    <xs:sequence>
+                                      <xs:element type="xs:byte" name="mn" minOccurs="0"/>
+                                      <xs:element name="msub" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:string" name="mi"/>
+                                            <xs:element name="mrow">
+                                              <xs:complexType>
+                                                <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                                  <xs:element type="xs:byte" name="mn"/>
+                                                  <xs:element type="xs:string" name="mi"/>
+                                                </xs:choice>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element type="xs:string" name="mi" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                  <xs:attribute type="xs:string" name="separators" use="optional"/>
+                  <xs:attribute type="xs:string" name="open" use="optional"/>
+                  <xs:attribute type="xs:string" name="close" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+<logicalOperators>
+	<logicalOperator1>
+		<condition> Equal to <\condition>
+		<operator> <![CDATA[=]]> <\operator>
+		<formulaExample> <![CDATA[=A1=B1]]> <\formulaExample>
+		<description>
+		
+			<![CDATA[if(A1=B1){
+					return true;
+				}
+				 else{
+					return false;
+				}]]>
+		<\description>
+	<\logicalOperator1>
